@@ -192,9 +192,12 @@
         // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navbar = document.querySelector('#navbar ul');
+        const body = document.body;
 
-        menuBtn.addEventListener('click', () => {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             navbar.classList.toggle('active');
+            body.classList.toggle('menu-open');
         });
 
         // Close menu when clicking on a link
@@ -202,6 +205,7 @@
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navbar.classList.remove('active');
+                body.classList.remove('menu-open');
             });
         });
 
@@ -209,6 +213,15 @@
         document.addEventListener('click', (e) => {
             if (!menuBtn.contains(e.target) && !navbar.contains(e.target)) {
                 navbar.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 700) {
+                navbar.classList.remove('active');
+                body.classList.remove('menu-open');
             }
         });
     </script>
