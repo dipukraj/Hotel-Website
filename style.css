@@ -163,7 +163,7 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../image/background1.jpg);
+    background: url(/image/Background\ web.jpg);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
