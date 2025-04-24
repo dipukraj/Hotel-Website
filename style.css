@@ -35,7 +35,7 @@ html{
     top: 0px;
     left: 0;
     height: 100px;
-    background: rgba(201, 45, 21, 0.95);
+    background: rgba(201, 132, 21, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
