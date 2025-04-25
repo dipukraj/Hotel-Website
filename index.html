@@ -43,21 +43,21 @@
         <h1 class="primary center">Our Services</h1>
         <div id="services">
             <div class="box">
-                <img src="/image/background3.jpg" alt="">
+                <img src="/image/bulk ordering.jpeg" alt="">
                 <h2 class="h-secondary center">Food Catering</h2>
                 <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sint quidem architecto
                     veniam maxime sequi,tenetur ut quia alias incidunt! In dolores, delectus aliquam itaque doloribus
                     perferendis fugiat ea? A libero obcaecati vel harum.</p>
             </div>
             <div class="box">
-                <img src="/image/background4.jpg" alt="">
+                <img src="/image/food.jpeg" alt="">
                 <h2 class="h-secondary center">Bulk Ordering</h2>
                 <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sint quidem architecto
                     veniam maxime sequi,tenetur ut quia alias incidunt! In dolores, delectus aliquam itaque doloribus
                     perferendis fugiat ea? A libero obcaecati vel harum.</p>
             </div>
             <div class="box">
-                <img src="/image/background6.jpg" alt="">
+                <img src="/image/food order.png" alt="">
                 <h2 class="h-secondary center">Food Ordering</h2>
                 <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sint quidem architecto
                     veniam maxime sequi,tenetur ut quia alias incidunt! In dolores, delectus aliquam itaque doloribus
@@ -75,6 +75,7 @@
             const menuData = [
                 {
                     category: "Momo's",
+                    image: "/image/momos2.jpg",
                     items: [
                         { name: "Veg Momo's", price: 40 },
                         { name: "Veg Momo's (Half)", price: 20 },
@@ -94,6 +95,7 @@
                 },
                 {
                     category: "Burger",
+                    image: "/image/burger2.jpg",
                     items: [
                         { name: "Veg Burger", price: 20 },
                         { name: "Paneer Burger", price: 35 },
@@ -104,6 +106,7 @@
                 },
                 {
                     category: "Roll",
+                    image: "/image/Roll.png.png",
                     items: [
                         { name: "Veg Roll", price: 25 },
                         { name: "Egg Roll", price: 35 },
@@ -116,6 +119,7 @@
                 },
                 {
                     category: "Noodles",
+                    image: "/image/noodles2.avif",
                     items: [
                         { name: "Veg Chaumin", price: 50 },
                         { name: "Veg Chaumin (Half)", price: 30 },
@@ -131,6 +135,7 @@
                 },
                 {
                     category: "Sandwich",
+                    image: "/image/sandwich.jpeg",
                     items: [
                         { name: "Veg Sandwich", price: 30 },
                         { name: "Paneer Sandwich", price: 35 },
@@ -140,6 +145,7 @@
                 },
                 {
                     category: "Pizza",
+                    image: "/image/pizza3.jpeg",
                     items: [
                         { name: "Veg Pizza", price: 99 },
                         { name: "Corn Pizza", price: 140 },
@@ -148,6 +154,7 @@
                 },
                 {
                     category: "Cold Coffee",
+                    image: "/image/cold coffee.jpg",
                     items: [
                         { name: "Cold Coffee with Ice Cream", price: 40 },
                         { name: "Cold Coffee with Ice Cream & Chocolate", price: 60 }
@@ -155,6 +162,7 @@
                 },
                 {
                     category: "Main Course",
+                    image: "/image/main course.jpg",
                     items: [
                         { name: "Paneer Chilli", price: 150 },
                         { name: "Paneer Chilli (Half)", price: 80 },
@@ -172,6 +180,7 @@
                 },
                 {
                     category: "Starter",
+                    image: "/image/manchuriyan.jpg",
                     items: [
                         { name: "Potato Chilli (Half)", price: 60 },
                         { name: "Potato Chilli (Full)", price: 100 },
@@ -194,7 +203,12 @@
                 menuData.forEach(section => {
                     const sectionEl = document.createElement("div");
                     sectionEl.className = "menu-category";
-                    sectionEl.innerHTML = `<h2>${section.category}</h2>`;
+                    sectionEl.innerHTML = `
+                        <h2>${section.category}</h2>
+                        <div class="category-image-container">
+                            <img src="${section.image}" alt="${section.category}" class="category-image">
+                        </div>
+                    `;
 
                     section.items.forEach(item => {
                         const itemEl = document.createElement("div");
@@ -245,6 +259,24 @@
         
         </div>
 
+    </section>
+
+    <section id="social-section">
+        <h1 class="h-primary center">Connect With Us</h1>
+        <div id="social-links">
+            <div class="social-item">
+                <a href="https://www.instagram.com/delicious_fa_st_food" target="_blank">
+                    <img src="/image/Delicious fast food logo.jpg" alt="Instagram">
+                    <p>Follow us on Instagram</p>
+                </a>
+            </div>
+            <div class="social-item">
+                <a href="tel:+91XXXXXXXXXX">
+                    <img src="/image/phone.jpeg" alt="Phone">
+                    <p>Call us: +91 9234767628</p>
+                </a>
+            </div>
+        </div>
     </section>
 
     <section id="contact">

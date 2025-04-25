@@ -238,7 +238,7 @@ html{
     border: none;
     padding: 40px;
     margin: 10px;
-    border-radius: 15px;
+    border-radius: 25px;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
@@ -258,7 +258,7 @@ html{
     height: 200px;
     margin: auto;
     display: block;
-    border-radius: 10px;
+    border-radius: 25px;
     margin-bottom: 20px;
     transition: var(--transition);
 }
@@ -586,20 +586,109 @@ footer a:hover {
 .menu-category {
     margin-bottom: 40px;
     background: white;
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.menu-category:hover {
+    transform: translateY(-5px);
+}
+
+.menu-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 152, 0, 0.1));
+    z-index: 0;
 }
 
 .menu-category h2 {
     color: #ff6b6b;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    border-bottom: 2px solid #ff6b6b;
-    padding-bottom: 10px;
+    margin: 0 0 25px 0;
+    font-size: 2.2rem;
+    border-bottom: 3px solid #ff6b6b;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 1;
 }
 
+.menu-category h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #ff9800;
+}
+
+.category-image-container {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.category-image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    border: 5px solid white;
+    position: relative;
+}
+
+.category-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(255, 152, 0, 0.2));
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-image:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.category-image:hover::before {
+    opacity: 1;
+}
+
+/* Responsive styles for category images */
+@media screen and (max-width: 700px) {
+    .menu-category {
+        padding: 20px;
+    }
+
+    .category-image {
+        width: 220px;
+        height: 220px;
+    }
+
+    .menu-category h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Add animation for menu items */
 .item {
     display: flex;
     justify-content: space-between;
@@ -607,19 +696,22 @@ footer a:hover {
     padding: 15px;
     margin: 10px 0;
     background: #f8f9fa;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .item:hover {
     transform: translateX(5px);
-    background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .item span {
     font-size: 1.1rem;
     color: #333;
+    font-weight: 500;
 }
 
 .item button {
@@ -631,26 +723,13 @@ footer a:hover {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
 }
 
 .item button:hover {
     background: #ff5252;
     transform: scale(1.05);
-}
-
-/* Add decorative elements */
-#menu-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../image/menu-pattern.png);
-    background-size: 300px;
-    background-repeat: repeat;
-    opacity: 0.1;
-    z-index: 0;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
 }
 
 /* Menu Section Heading */
@@ -685,17 +764,6 @@ footer a:hover {
     width: 200px;
     height: 3px;
     background: linear-gradient(to right, transparent, #ff9800, transparent);
-}
-
-/* Responsive styles */
-@media screen and (max-width: 700px) {
-    .menu-category {
-        padding: 20px;
-    }
-    
-    .item {
-        flex-direction: column;
-    }
 }
 
 /* Services Section Heading */
@@ -839,4 +907,73 @@ footer a:hover {
     font-size: 1.5rem;
     color: #ff6b6b;
     font-weight: bold;
+}
+
+/* Social Section */
+#social-section {
+    padding: 80px 0 50px;
+    background: linear-gradient(135deg, #cedba4 0%, #e6d3a9 100%);
+    position: relative;
+}
+
+#social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.social-item {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.social-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-item a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-item img {
+    border-radius: 25px;
+    width: 250px;
+    height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.social-item:hover img {
+    transform: scale(1.1);
+}
+
+.social-item p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Responsive styles for social section */
+@media screen and (max-width: 700px) {
+    #social-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .social-item {
+        width: 100%;
+        max-width: 300px;
+    }
 }
