@@ -68,49 +68,154 @@
 
     <section id="menu-section">
         <h1 class="h-primary center">Our Menu</h1>
-        <div id="menu-container">
-            <div class="menu-category">
-                <h2 class="h-secondary center">Starters</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="/image/menu/starters.jpg" alt="Starters">
-                        <h3>Vegetable Spring Rolls</h3>
-                        <p>Crispy rolls filled with fresh vegetables</p>
-                        <span class="price">₹199</span>
-                    </div>
-                    <!-- Add more starter items here -->
-                </div>
-            </div>
 
-            <div class="menu-category">
-                <h2 class="h-secondary center">Main Course</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="/image/menu/main-course.jpg" alt="Main Course">
-                        <h3>Butter Chicken</h3>
-                        <p>Tender chicken in rich, creamy tomato sauce</p>
-                        <span class="price">₹299</span>
-                    </div>
-                    <!-- Add more main course items here -->
-                </div>
-            </div>
+        <div class="menu-section" id="menu"></div>
 
-            <div class="menu-category">
-                <h2 class="h-secondary center">Desserts</h2>
-                <div class="menu-items">
-                    <div class="menu-item">
-                        <img src="/image/menu/desserts.jpg" alt="Desserts">
-                        <h3>Gulab Jamun</h3>
-                        <p>Sweet milk dumplings in sugar syrup</p>
-                        <span class="price">₹149</span>
-                    </div>
-                    <!-- Add more dessert items here -->
-                </div>
-            </div>
-        </div>
-        <div class="menu-cta">
-            <button class="btn">View Full Menu</button>
-        </div>
+        <script>
+            const menuData = [
+                {
+                    category: "Momo's",
+                    items: [
+                        { name: "Veg Momo's", price: 40 },
+                        { name: "Veg Momo's (Half)", price: 20 },
+                        { name: "Veg Fried Momo's", price: 50 },
+                        { name: "Veg Fried Momo's (Half)", price: 25 },
+                        { name: "Veg Crispy Momo's", price: 60 },
+                        { name: "Veg Crispy Momo's (Half)", price: 30 },
+                        { name: "Paneer Momo's", price: 50 },
+                        { name: "Paneer Momo's (Half)", price: 25 },
+                        { name: "Fried Paneer Momo's", price: 50 },
+                        { name: "Fried Paneer Momo's(Half)", price: 30 },
+                        { name: "Crispy Momo's", price: 69 },
+                        { name: "Crispy Momo's(Half)", price: 40 },
+                        { name: "Chilli Momo's", price: 99 },
+                        { name: "Chilli Momo's(Half)", price: 59 }
+                    ]
+                },
+                {
+                    category: "Burger",
+                    items: [
+                        { name: "Veg Burger", price: 20 },
+                        { name: "Paneer Burger", price: 35 },
+                        { name: "Cheese Burger", price: 40 },
+                        { name: "Chicken Burger", price: 50 },
+                        { name: "Chicken Burger (with cheese)", price: 69 }
+                    ]
+                },
+                {
+                    category: "Roll",
+                    items: [
+                        { name: "Veg Roll", price: 25 },
+                        { name: "Egg Roll", price: 35 },
+                        { name: "Lachha Egg Roll", price: 40 },
+                        { name: "Paneer Roll", price: 40 },
+                        { name: "Lachha Paneer Roll", price: 45 },
+                        { name: "Chicken Roll", price: 59 },
+                        { name: "Lachha Chicken Roll", price: 69 }
+                    ]
+                },
+                {
+                    category: "Noodles",
+                    items: [
+                        { name: "Veg Chaumin", price: 50 },
+                        { name: "Veg Chaumin (Half)", price: 30 },
+                        { name: "Paneer Chaumin", price: 60 },
+                        { name: "Paneer Chaumin (Half)", price: 40 },
+                        { name: "Egg Noodles", price: 60 },
+                        { name: "Egg Noodles (Half)", price: 40 },
+                        { name: "Chicken Noodles", price: 79 },
+                        { name: "Chicken Noodles (Half)", price: 59 },
+                        { name: "Hakka Noodles", price: 70 },
+                        { name: "Hakka Noodles (Half)", price: 40 },
+                    ]
+                },
+                {
+                    category: "Sandwich",
+                    items: [
+                        { name: "Veg Sandwich", price: 30 },
+                        { name: "Paneer Sandwich", price: 35 },
+                        { name: "Cheese Sandwich", price: 40 },
+                        { name: "Loaded Sandwich", price: 50 }
+                    ]
+                },
+                {
+                    category: "Pizza",
+                    items: [
+                        { name: "Veg Pizza", price: 99 },
+                        { name: "Corn Pizza", price: 140 },
+                        { name: "Paneer Pizza", price: 120 }
+                    ]
+                },
+                {
+                    category: "Cold Coffee",
+                    items: [
+                        { name: "Cold Coffee with Ice Cream", price: 40 },
+                        { name: "Cold Coffee with Ice Cream & Chocolate", price: 60 }
+                    ]
+                },
+                {
+                    category: "Main Course",
+                    items: [
+                        { name: "Paneer Chilli", price: 150 },
+                        { name: "Paneer Chilli (Half)", price: 80 },
+                        { name: "Paneer Masala", price: 160 },
+                        { name: "Paneer Masala (Half)", price: 90 },
+                        { name: "Chicken Chilli", price: 150 },
+                        { name: "Chicken Chilli (Half)", price: 80 }, 
+                        { name: "Chicken Dehati", price: 200 },
+                        { name: "Chicken Dehati (Half)", price: 110 },
+                        { name: "Chicken Masala", price: 200 },
+                        { name: "Chicken Masala (Half)", price: 110 },
+                        { name: " Manchuriyan", price: 100 },
+                        { name: "Manchuriyan (Half)", price: 60 },
+                    ]
+                },
+                {
+                    category: "Starter",
+                    items: [
+                        { name: "Potato Chilli (Half)", price: 60 },
+                        { name: "Potato Chilli (Full)", price: 100 },
+                        { name: "Dry Paneer Chilli (Half)", price: 70 },
+                        { name: "Dry Paneer Chilli (Full)", price: 120 },
+                        { name: "Momo Chilli (Half)", price: 60 },
+                        { name: "Momo Chilli (Full)", price: 100 },
+                        { name: "Kurkure Momo (Half)", price: 50 },
+                        { name: "Kurkure Momo (Full)", price: 80 },
+                        { name: "Dry Manchurian", price: 99 },
+                        { name: "Manchurian (Half)", price: 60 },
+                        { name: "Manchurian (Full)", price: 100 }
+                    ]
+                }
+            ];
+
+            const menuContainer = document.getElementById("menu");
+
+            function renderMenu() {
+                menuData.forEach(section => {
+                    const sectionEl = document.createElement("div");
+                    sectionEl.className = "menu-category";
+                    sectionEl.innerHTML = `<h2>${section.category}</h2>`;
+
+                    section.items.forEach(item => {
+                        const itemEl = document.createElement("div");
+                        itemEl.className = "item";
+                        itemEl.innerHTML = `
+                            <span>${item.name} - ₹${item.price}</span>
+                            <button onclick='addToOrder("${item.name}", ${item.price})'>Add to Order</button>
+                        `;
+                        sectionEl.appendChild(itemEl);
+                    });
+
+                    menuContainer.appendChild(sectionEl);
+                });
+            }
+
+            function addToOrder(name, price) {
+                alert(`Added to order: ${name} - ₹${price}`);
+            }
+
+            renderMenu();
+        </script>
     </section>
 
     <section id="client-section">
@@ -167,13 +272,7 @@
         </div>
     </section>
 
-    <!-- <footer>
-        <div class="center">
-            Developed with ❤️ by ✨ Dipu K Raj ✨
-        </div>
-    </footer> -->
-
-    <!-- Footer Section -->
+   
     <footer style="background-color: #1a1a1a; color: white; text-align: center; padding: 20px;">
         <p>Developed with ❤️ by <strong>✨ Dipu K Raj ✨</strong></p>
         <p>
